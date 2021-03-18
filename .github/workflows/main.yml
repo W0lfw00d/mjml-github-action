@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  mjml_job:
+    runs-on: ubuntu-latest
+    name: Compile mjml templates to html
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Compile
+        uses: ./
+        id: templates
+        with:
+          input_dir: 'templates'
+          output_dir: 'html-dir'

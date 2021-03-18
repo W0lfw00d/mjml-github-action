@@ -1,0 +1,21 @@
+name: action-mjml-templates
+description: You can notify slack of GitHub Actions.
+author: NGTI
+branding:
+  icon: mail
+  color: orange
+inputs:
+  input_dir:
+    description: |
+      The directory inside the github repo from where the mjml template will be imported from
+    default: ""
+    required: false
+  output_dir:
+    description: |
+      The directory inside the github repo where the html template will export to
+    default: ""
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
